@@ -1,8 +1,16 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const consultas = require('./consultas.js');
 
-app.get('/', (req, res) => {
-    res.send('Hola mundo')
-})
+const app = express();
+const port = 3000;
 
-app.listen(3000, console.log('Servidor encendido...'))
+// Rutas para usuarios
+app.get('/usuarios', consultas.obtenerUsuarios);
+app.get('/usuarios/:id', consultas.obtenerUsuarioPorId);
+
+// Otras rutas para platos, etc.
+
+// Levantar el servidor
+app.listen(port, () => {
+  console.log(`Servidor corriendo en http://localhost:${port}`);
+});
