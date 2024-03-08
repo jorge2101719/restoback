@@ -11,3 +11,4 @@ CREATE TABLE usuarios (
     email VARCHAR(255),
     password VARCHAR(255)
 );
+crete database rest_back
