@@ -17,9 +17,10 @@ app.post('/usuarios', consultas.agregarUsuario); // Ruta POST para agregar usuar
 app.get('/platos', consultas.obtenerPlatos);
 app.get('/platos/:id', consultas.obtenerPlatoPorId);
 app.post('/platos', consultas.agregarPlato); // Ruta POST para agregar platos
+app.delete('/platos/:id', consultas.eliminarPlatoPorId); // Ruta DELETE para eliminar platos
+app.put('/platos/:id', consultas.editarPlatoPorId); // Ruta PUT para editar platos
 
 // Levantar el servidor
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
-
